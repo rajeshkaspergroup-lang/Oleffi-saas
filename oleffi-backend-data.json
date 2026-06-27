@@ -1,0 +1,843 @@
+{
+  "companies": {
+    "MICRO-6452": {
+      "code": "MICRO-6452",
+      "companyName": "Micro",
+      "createdAt": "2026-06-04T08:30:51.708Z",
+      "users": [
+        {
+          "username": "Aa",
+          "role": "admin",
+          "active": true,
+          "passwordHash": "a256e12b1383e3076ec7c10b636107b8:ba30eb69636f65da2ad4831659b3b6678d352786b22b35d9235d889d6ff498b1792501c100a83272b9933e04a2f353b5aa39f3b75d9d8a7a51010420f34b0cdc"
+        },
+        {
+          "username": "Pp",
+          "role": "prod",
+          "active": true,
+          "passwordHash": "0865a0bbab677e7c88294afc05f2cf91:016ddf032a68acebb1df20e0fc89b270c3a2e58295c54ac4f0db5d4129132bc8804373b4789abfc8ce89cc3459ee2d8676f88327e376240d4d2779e8520ee329"
+        },
+        {
+          "username": "Qq",
+          "role": "quality",
+          "active": true,
+          "passwordHash": "7b40bd6584a6e93432ad6a5b598daff1:f766c3cfedc180d4163ea0890f072bb01b68e52f3dd74e028aaee89a15101c3fa48c2899ef256c8e1b73969dcf645148f3e1b0f5c334d59e8c78d38329dcafb9"
+        }
+      ],
+      "state": {
+        "db": {
+          "production": [],
+          "quality": [
+            {
+              "id": 1780676169290,
+              "date": "2026-06-05",
+              "inspector": "Rajesh",
+              "machine": "MC001 Cnc",
+              "part": "Automotive Bracket",
+              "partNo": "PN-1001",
+              "sample": 500,
+              "ok": 480,
+              "defects": 20,
+              "passRate": "96.0",
+              "defectType": "Porosity",
+              "status": "Pass"
+            }
+          ],
+          "downtime": [],
+          "machines": [
+            {
+              "id": "009",
+              "name": "Inject (Injection Moulding Machine)",
+              "cap": 0,
+              "status": "Active"
+            },
+            {
+              "id": "MC001",
+              "name": "Cnc",
+              "cap": 0,
+              "status": "Active"
+            },
+            {
+              "id": "MC002",
+              "name": "Cnc",
+              "cap": 0,
+              "status": "Active"
+            },
+            {
+              "id": "MC003",
+              "name": "Cnc",
+              "cap": 0,
+              "status": "Active"
+            },
+            {
+              "id": "MC004",
+              "name": "Cnc",
+              "cap": 0,
+              "status": "Active"
+            },
+            {
+              "id": "MC005",
+              "name": "Cnc",
+              "cap": 0,
+              "status": "Active"
+            }
+          ],
+          "config": {
+            "company": "Micro",
+            "location": "Pune",
+            "oeeTarget": 85,
+            "qualityModuleEnabled": true,
+            "owner": "Rakesh",
+            "city": "Pune",
+            "sector": "CNC Machining",
+            "msmeType": "Micro Enterprise",
+            "gstin": "",
+            "udyam": "",
+            "phone": "1234567890",
+            "address": "Pune",
+            "employees": "11–25"
+          }
+        },
+        "lists": {
+          "machines": [
+            "111 1 (VMC Machine)",
+            "MC001 Cnc",
+            "MC002 Cnc",
+            "MC003 Cnc",
+            "MC004 Cnc",
+            "MC005 Cnc"
+          ],
+          "rejectionReasons": [
+            "Dimensional Deviation",
+            "Surface Defect",
+            "Warpage",
+            "Short Shot",
+            "Flash / Burr",
+            "Wrong Material",
+            "Incomplete Part",
+            "Operator Error",
+            "Tool Wear",
+            "Customer Return"
+          ],
+          "operatorNames": [
+            "Rajesh",
+            "Amit",
+            "Suresh",
+            "Mahesh"
+          ],
+          "downtimeCategories": [
+            "Electrical",
+            "Mechanical",
+            "Hydraulic",
+            "Pneumatic",
+            "Set up change",
+            "Material"
+          ],
+          "downtimeReasons": [
+            "Power failure",
+            "Sensor fault",
+            "Motor trip",
+            "Heater fault",
+            "Panel issue",
+            "Cable loose",
+            "Bearing failure",
+            "Gear problem",
+            "Conveyor jam",
+            "Coupling damage",
+            "Spindle failure",
+            "Belt break",
+            "Hydraulic leak",
+            "Low pressure",
+            "Pump issue",
+            "Valve issue",
+            "Cylinder issue",
+            "Oil overheating",
+            "Air leak",
+            "Low air pressure",
+            "Solenoid issue",
+            "FRL issue",
+            "Cylinder stuck",
+            "Compressor issue",
+            "Die change",
+            "Mould change",
+            "Tool change",
+            "Job setting",
+            "Trial setting",
+            "Program setting",
+            "Waiting for material",
+            "Material shortage",
+            "Wrong material",
+            "Material jam",
+            "Material loading",
+            "Material inspection"
+          ],
+          "defectTypes": [
+            "Dimensional",
+            "Surface Finish",
+            "Porosity",
+            "Cracks / Fracture",
+            "Warpage / Deformation",
+            "Incomplete Fill",
+            "Hardness Failure",
+            "Color / Appearance",
+            "Weld Line",
+            "Sink Mark",
+            "Uneven sheet size"
+          ]
+        },
+        "partCatalog": [
+          {
+            "partNo": "PN-1001",
+            "partName": "Automotive Bracket",
+            "cycleTime": 45,
+            "machineIds": [
+              "MC001"
+            ]
+          },
+          {
+            "partNo": "PN-1002",
+            "partName": "Gear Housing",
+            "cycleTime": 120,
+            "machineIds": [
+              "MC002"
+            ]
+          },
+          {
+            "partNo": "PN-1003",
+            "partName": "Shaft Collar",
+            "cycleTime": 35,
+            "machineIds": [
+              "MC003"
+            ]
+          },
+          {
+            "partNo": "PN-1004",
+            "partName": "Bearing Cap",
+            "cycleTime": 55,
+            "machineIds": [
+              "MC004"
+            ]
+          },
+          {
+            "partNo": "PN-1005",
+            "partName": "Valve Body",
+            "cycleTime": 90,
+            "machineIds": [
+              "MC005"
+            ]
+          },
+          {
+            "partNo": "PN-1006",
+            "partName": "Flange Adapter",
+            "cycleTime": 70,
+            "machineIds": [
+              "MC006"
+            ]
+          },
+          {
+            "partNo": "PN-1007",
+            "partName": "Threaded Stud",
+            "cycleTime": 25,
+            "machineIds": [
+              "MC007"
+            ]
+          },
+          {
+            "partNo": "PN-1008",
+            "partName": "Pump Cover",
+            "cycleTime": 110,
+            "machineIds": [
+              "MC008"
+            ]
+          },
+          {
+            "partNo": "PN-1009",
+            "partName": "Connector Block",
+            "cycleTime": 40,
+            "machineIds": [
+              "MC009"
+            ]
+          },
+          {
+            "partNo": "PN-1010",
+            "partName": "Mounting Plate",
+            "cycleTime": 65,
+            "machineIds": [
+              "MC010"
+            ]
+          }
+        ]
+      }
+    },
+    "KASPER-9131": {
+      "code": "KASPER-9131",
+      "companyName": "Kasper",
+      "createdAt": "2026-06-09T07:53:26.342Z",
+      "users": [
+        {
+          "username": "Ad",
+          "passwordHash": "ac81c8b4193933553be0f72cd10eeb4b:65c1edd4d0cadda2a7426f72b7687e2d2b1555af6a27dedcc52cbcf985f98d7e8d2424a5b19e7266013018d80a8f1bb834c8841a7c0ff3dbe007b2f73b6e9eac",
+          "role": "admin",
+          "active": true
+        },
+        {
+          "username": "Pd",
+          "passwordHash": "48f7a6ea7bdd26902903fb146be54a48:fc682052cab5b4246c23a5820e2981acac97f88a75ded040745702d7484a772b46b906f41bf295db1a16978af6cfda8ba1555686ba814d60668a3985af3d46cf",
+          "role": "prod",
+          "active": true
+        },
+        {
+          "username": "Qd",
+          "passwordHash": "361a5ff58f4804b23034c0bf39925700:a6347c63c623d81a463a6ad248294be3c51c985e63ddabee929197b9233d35a0a812c5deb837b747290f94d848c5118f9b24e68f81d7ed3e279f5832686ff4ef",
+          "role": "quality",
+          "active": true
+        }
+      ],
+      "state": {
+        "db": {
+          "production": [],
+          "quality": [],
+          "downtime": [],
+          "machines": [
+            {
+              "id": "007",
+              "name": "Injection (Injection Moulding Machine)",
+              "cap": 0,
+              "status": "Active"
+            }
+          ],
+          "config": {
+            "company": "Kasper",
+            "location": "Pune",
+            "oeeTarget": 85,
+            "qualityModuleEnabled": true,
+            "owner": "Pradeep",
+            "city": "Pune",
+            "sector": "Electronics Assembly",
+            "msmeType": "Micro Enterprise",
+            "gstin": "",
+            "udyam": "",
+            "phone": "1234567890",
+            "address": "Pune",
+            "employees": "11–25"
+          }
+        },
+        "lists": {
+          "machines": [
+            "111 1 (VMC Machine)",
+            "MC001 Cnc",
+            "MC002 Cnc",
+            "MC003 Cnc",
+            "MC004 Cnc",
+            "MC005 Cnc"
+          ],
+          "rejectionReasons": [
+            "Dimensional Deviation",
+            "Surface Defect",
+            "Warpage",
+            "Short Shot",
+            "Flash / Burr",
+            "Wrong Material",
+            "Incomplete Part",
+            "Operator Error",
+            "Tool Wear",
+            "Customer Return"
+          ],
+          "operatorNames": [
+            "Rajesh",
+            "Amit",
+            "Suresh",
+            "Mahesh"
+          ],
+          "downtimeCategories": [
+            "Electrical",
+            "Mechanical",
+            "Hydraulic",
+            "Pneumatic",
+            "Set up change",
+            "Material"
+          ],
+          "downtimeReasons": [
+            "Power failure",
+            "Sensor fault",
+            "Motor trip",
+            "Heater fault",
+            "Panel issue",
+            "Cable loose",
+            "Bearing failure",
+            "Gear problem",
+            "Conveyor jam",
+            "Coupling damage",
+            "Spindle failure",
+            "Belt break",
+            "Hydraulic leak",
+            "Low pressure",
+            "Pump issue",
+            "Valve issue",
+            "Cylinder issue",
+            "Oil overheating",
+            "Air leak",
+            "Low air pressure",
+            "Solenoid issue",
+            "FRL issue",
+            "Cylinder stuck",
+            "Compressor issue",
+            "Die change",
+            "Mould change",
+            "Tool change",
+            "Job setting",
+            "Trial setting",
+            "Program setting",
+            "Waiting for material",
+            "Material shortage",
+            "Wrong material",
+            "Material jam",
+            "Material loading",
+            "Material inspection"
+          ],
+          "defectTypes": [
+            "Dimensional",
+            "Surface Finish",
+            "Porosity",
+            "Cracks / Fracture",
+            "Warpage / Deformation",
+            "Incomplete Fill",
+            "Hardness Failure",
+            "Color / Appearance",
+            "Weld Line",
+            "Sink Mark",
+            "Uneven sheet size"
+          ]
+        },
+        "partCatalog": [
+          {
+            "partNo": "PN-1001",
+            "partName": "Automotive Bracket",
+            "cycleTime": 45,
+            "machineIds": [
+              "MC001"
+            ]
+          },
+          {
+            "partNo": "PN-1002",
+            "partName": "Gear Housing",
+            "cycleTime": 120,
+            "machineIds": [
+              "MC002"
+            ]
+          },
+          {
+            "partNo": "PN-1003",
+            "partName": "Shaft Collar",
+            "cycleTime": 35,
+            "machineIds": [
+              "MC003"
+            ]
+          },
+          {
+            "partNo": "PN-1004",
+            "partName": "Bearing Cap",
+            "cycleTime": 55,
+            "machineIds": [
+              "MC004"
+            ]
+          },
+          {
+            "partNo": "PN-1005",
+            "partName": "Valve Body",
+            "cycleTime": 90,
+            "machineIds": [
+              "MC005"
+            ]
+          },
+          {
+            "partNo": "PN-1006",
+            "partName": "Flange Adapter",
+            "cycleTime": 70,
+            "machineIds": [
+              "MC006"
+            ]
+          },
+          {
+            "partNo": "PN-1007",
+            "partName": "Threaded Stud",
+            "cycleTime": 25,
+            "machineIds": [
+              "MC007"
+            ]
+          },
+          {
+            "partNo": "PN-1008",
+            "partName": "Pump Cover",
+            "cycleTime": 110,
+            "machineIds": [
+              "MC008"
+            ]
+          },
+          {
+            "partNo": "PN-1009",
+            "partName": "Connector Block",
+            "cycleTime": 40,
+            "machineIds": [
+              "MC009"
+            ]
+          },
+          {
+            "partNo": "PN-1010",
+            "partName": "Mounting Plate",
+            "cycleTime": 65,
+            "machineIds": [
+              "MC010"
+            ]
+          }
+        ]
+      }
+    },
+    "MICRO-ENGG-7100": {
+      "code": "MICRO-ENGG-7100",
+      "companyName": "Micro Engg",
+      "createdAt": "2026-06-22T08:41:31.586Z",
+      "users": [
+        {
+          "username": "Abc",
+          "passwordHash": "8a8b501660a63826abae25d5014c6586:f132200bc2b2646a37fe32801c24779c2ea0fb0bf64ee701699a2d099a24342f9ee6e21a782f198d7bc2de5b88b8480cf3a0cf3c749d170ed4f8a0e1e17d7f75",
+          "role": "admin",
+          "active": true
+        },
+        {
+          "username": "Efg",
+          "passwordHash": "94cec9a6dddf755446ca9c0442a61ef5:2f443730bc11d3b451f3a1d4ddbb7cd9a4aa3af63fb81d2054fb53341dcbe41b456a6e8be002e33ecb585ebb83644531a8f23c38801c46e021f6796e4e51e83d",
+          "role": "prod",
+          "active": true
+        },
+        {
+          "username": "Hij",
+          "passwordHash": "5bf16889f479e8eee68ef00ba78277c0:be696125108abdae45c66c1d0b65a520511200b8fdfb577fb1760c24aea27a519339d801717dd75719e122a1596bf7f9be5c96743d95e4212822d8449e97b5be",
+          "role": "quality",
+          "active": true
+        }
+      ],
+      "state": {
+        "db": {
+          "production": [],
+          "quality": [],
+          "downtime": [],
+          "machines": [
+            {
+              "id": "111",
+              "name": "Injection molding (Injection Moulding Machine)",
+              "cap": 0,
+              "status": "Active"
+            }
+          ],
+          "config": {
+            "company": "Micro Engg",
+            "location": "Pune",
+            "oeeTarget": 85,
+            "qualityModuleEnabled": true,
+            "owner": "Rajesh",
+            "city": "Pune",
+            "sector": "Plastic Moulding",
+            "msmeType": "Micro Enterprise",
+            "gstin": "1234567890",
+            "udyam": "1234567890",
+            "phone": "134567890",
+            "address": "Pune",
+            "employees": "11–25"
+          }
+        },
+        "lists": {
+          "machines": [
+            "111 1 (VMC Machine)",
+            "MC001 Cnc",
+            "MC002 Cnc",
+            "MC003 Cnc",
+            "MC004 Cnc",
+            "MC005 Cnc"
+          ],
+          "rejectionReasons": [
+            "Dimensional Deviation",
+            "Surface Defect",
+            "Warpage",
+            "Short Shot",
+            "Flash / Burr",
+            "Wrong Material",
+            "Incomplete Part",
+            "Operator Error",
+            "Tool Wear",
+            "Customer Return"
+          ],
+          "operatorNames": [
+            "Rajesh",
+            "Amit",
+            "Suresh",
+            "Mahesh"
+          ],
+          "downtimeCategories": [
+            "Electrical",
+            "Mechanical",
+            "Hydraulic",
+            "Pneumatic",
+            "Set up change",
+            "Material"
+          ],
+          "downtimeReasons": [
+            "Power failure",
+            "Sensor fault",
+            "Motor trip",
+            "Heater fault",
+            "Panel issue",
+            "Cable loose",
+            "Bearing failure",
+            "Gear problem",
+            "Conveyor jam",
+            "Coupling damage",
+            "Spindle failure",
+            "Belt break",
+            "Hydraulic leak",
+            "Low pressure",
+            "Pump issue",
+            "Valve issue",
+            "Cylinder issue",
+            "Oil overheating",
+            "Air leak",
+            "Low air pressure",
+            "Solenoid issue",
+            "FRL issue",
+            "Cylinder stuck",
+            "Compressor issue",
+            "Die change",
+            "Mould change",
+            "Tool change",
+            "Job setting",
+            "Trial setting",
+            "Program setting",
+            "Waiting for material",
+            "Material shortage",
+            "Wrong material",
+            "Material jam",
+            "Material loading",
+            "Material inspection"
+          ],
+          "defectTypes": [
+            "Dimensional",
+            "Surface Finish",
+            "Porosity",
+            "Cracks / Fracture",
+            "Warpage / Deformation",
+            "Incomplete Fill",
+            "Hardness Failure",
+            "Color / Appearance",
+            "Weld Line",
+            "Sink Mark",
+            "Uneven sheet size"
+          ]
+        },
+        "partCatalog": [
+          {
+            "partNo": "PN-1002",
+            "partName": "Gear Housing",
+            "cycleTime": 120,
+            "machineIds": [
+              "MC002"
+            ]
+          },
+          {
+            "partNo": "PN-1003",
+            "partName": "Shaft Collar",
+            "cycleTime": 35,
+            "machineIds": [
+              "MC003"
+            ]
+          },
+          {
+            "partNo": "PN-1004",
+            "partName": "Bearing Cap",
+            "cycleTime": 55,
+            "machineIds": [
+              "MC004"
+            ]
+          },
+          {
+            "partNo": "PN-1005",
+            "partName": "Valve Body",
+            "cycleTime": 90,
+            "machineIds": [
+              "MC005"
+            ]
+          },
+          {
+            "partNo": "PN-1006",
+            "partName": "Flange Adapter",
+            "cycleTime": 70,
+            "machineIds": [
+              "MC006"
+            ]
+          },
+          {
+            "partNo": "PN-1007",
+            "partName": "Threaded Stud",
+            "cycleTime": 25,
+            "machineIds": [
+              "MC007"
+            ]
+          },
+          {
+            "partNo": "PN-1008",
+            "partName": "Pump Cover",
+            "cycleTime": 110,
+            "machineIds": [
+              "MC008"
+            ]
+          },
+          {
+            "partNo": "PN-1009",
+            "partName": "Connector Block",
+            "cycleTime": 40,
+            "machineIds": [
+              "MC009"
+            ]
+          },
+          {
+            "partNo": "PN-1010",
+            "partName": "Mounting Plate",
+            "cycleTime": 65,
+            "machineIds": [
+              "MC010"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "sessions": {
+    "e9903baa8b5634d28311d9b5946b83601247930b08bcb969": {
+      "companyCode": "MICRO-6452",
+      "username": "Pp",
+      "role": "prod",
+      "createdAt": "2026-06-04T10:25:47.747Z"
+    },
+    "2fb845e786464577790bc6aafa6c736ca8b5f3503701f223": {
+      "companyCode": "MICRO-6452",
+      "username": "Pp",
+      "role": "prod",
+      "createdAt": "2026-06-04T11:16:41.746Z"
+    },
+    "774aac7127adcd3171fa98e47db4db67b67d11070d5472ac": {
+      "companyCode": "MICRO-6452",
+      "username": "Aa",
+      "role": "admin",
+      "createdAt": "2026-06-09T08:13:36.320Z"
+    },
+    "2d578931a6c8a63f3b1fbed5814b559d240be5d523040e1e": {
+      "companyCode": "MICRO-6452",
+      "username": "Pp",
+      "role": "prod",
+      "createdAt": "2026-06-20T13:55:25.208Z"
+    }
+  },
+  "leads": [
+    {
+      "id": "f9cbf423-7ddf-4e4f-8036-00c81d441e4a",
+      "contactName": "Rajesh",
+      "companyName": "Creative",
+      "phone": "1234567890",
+      "email": "raju@yahoo.com",
+      "city": "Pune",
+      "industry": "plastics",
+      "employees": "1-25",
+      "modules": [],
+      "erpName": "",
+      "timeline": "",
+      "demoPreference": "",
+      "message": "",
+      "createdAt": "2026-06-27T09:10:24.406Z",
+      "source": "oleffi_saas_frontend"
+    },
+    {
+      "id": "184846b7-4fbe-45f5-a7ab-ab9abbaa14f9",
+      "contactName": "Rajesh",
+      "companyName": "Creative",
+      "phone": "1234567890",
+      "email": "raju@yahoo.com",
+      "city": "Pune",
+      "industry": "Platics",
+      "employees": "1-25",
+      "modules": [],
+      "erpName": "",
+      "timeline": "",
+      "demoPreference": "",
+      "message": "",
+      "createdAt": "2026-06-27T09:07:16.123Z",
+      "source": "oleffi_saas_frontend"
+    },
+    {
+      "id": "056a301e-813d-4b5c-bb7a-823d2b8580a9",
+      "contactName": "Rajesh",
+      "companyName": "Creative",
+      "phone": "1234567890",
+      "email": "raju@yahoo.com",
+      "city": "Pune",
+      "industry": "Plastics",
+      "employees": "1-25",
+      "modules": [],
+      "erpName": "",
+      "timeline": "",
+      "demoPreference": "",
+      "message": "",
+      "createdAt": "2026-06-27T09:05:44.065Z",
+      "source": "oleffi_saas_frontend"
+    },
+    {
+      "id": "002a157f-05d9-41b3-9378-87d266e09686",
+      "contactName": "Rajesh",
+      "companyName": "Creative",
+      "phone": "1234567890",
+      "email": "raju@yahoo.com",
+      "city": "Pune",
+      "industry": "Plastics",
+      "employees": "1-25",
+      "modules": [],
+      "erpName": "",
+      "timeline": "",
+      "demoPreference": "",
+      "message": "",
+      "createdAt": "2026-06-27T08:59:37.810Z",
+      "source": "oleffi_saas_frontend"
+    },
+    {
+      "id": "ca9ad4dd-490d-4a7b-bd7e-649f0403f2ab",
+      "contactName": "Creative",
+      "companyName": "creative",
+      "phone": "1234567890",
+      "email": "raju@yahoo.com",
+      "city": "Pune",
+      "industry": "Plastics",
+      "employees": "1-25",
+      "modules": [],
+      "erpName": "",
+      "timeline": "",
+      "demoPreference": "",
+      "message": "",
+      "createdAt": "2026-06-27T08:48:35.830Z",
+      "source": "oleffi_saas_frontend"
+    },
+    {
+      "id": "12e98838-672f-4b63-a861-c1aa708ed230",
+      "contactName": "Rajesh",
+      "companyName": "Creative",
+      "phone": "1234567890",
+      "email": "raju@yahoo.com",
+      "city": "Pune",
+      "industry": "Plastics",
+      "employees": "1-25",
+      "modules": [],
+      "erpName": "",
+      "timeline": "",
+      "demoPreference": "",
+      "message": "",
+      "createdAt": "2026-06-27T08:45:07.930Z",
+      "source": "oleffi_saas_frontend"
+    }
+  ]
+}

@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oleffi | Smart Manufacturing SaaS for MSMEs</title>
+  <script src="oleffi_saas_config.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+    :root{
+      --bg:#f4f7fb;
+      --panel:#ffffff;
+      --ink:#0c1a2e;
+      --muted:#52627a;
+      --line:#d9e2ee;
+      --brand:#0b67ff;
+      --brand-2:#15a86b;
+      --brand-3:#ff8a1f;
+      --hero:#091225;
+      --hero-2:#102344;
+      --shadow:0 24px 60px rgba(9,18,37,0.14);
+      --radius:24px;
+      --safe-bottom:env(safe-area-inset-bottom, 0px);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:'Manrope',sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(11,103,255,0.10), transparent 28%),
+        radial-gradient(circle at top right, rgba(21,168,107,0.10), transparent 26%),
+        var(--bg);
+    }
+
+    a{text-decoration:none;color:inherit}
+    .shell{max-width:1220px;margin:0 auto;padding:0 20px}
+    .nav{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:blur(14px);
+      background:rgba(244,247,251,0.86);
+      border-bottom:1px solid rgba(217,226,238,0.9);
+    }
+    .nav-row{
+      display:flex;align-items:center;justify-content:space-between;
+      min-height:78px;gap:18px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;font-family:'Rajdhani',sans-serif;
+      font-weight:700;letter-spacing:3px;font-size:1.35rem;
+    }
+    .brand-badge{
+      width:44px;height:44px;border-radius:14px;display:grid;place-items:center;
+      background:linear-gradient(135deg,var(--brand),#63a5ff);color:#fff;
+      box-shadow:0 12px 24px rgba(11,103,255,0.24);
+    }
+    .nav-links{display:flex;gap:22px;color:var(--muted);font-size:.95rem}
+    .nav-actions{display:flex;gap:10px;align-items:center}
+
+    .btn{
+      border:none;border-radius:999px;padding:14px 22px;cursor:pointer;
+      font-weight:800;font-size:.94rem;font-family:'Manrope',sans-serif;
+      transition:transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{
+      color:#fff;background:linear-gradient(135deg,var(--brand),#2f8cff);
+      box-shadow:0 14px 34px rgba(11,103,255,0.26);
+    }
+    .btn-secondary{
+      color:var(--ink);background:#fff;border:1px solid var(--line);
+      box-shadow:0 10px 24px rgba(12,26,46,0.08);
+    }
+    .btn-green{
+      color:#fff;background:linear-gradient(135deg,var(--brand-2),#29c986);
+      box-shadow:0 14px 34px rgba(21,168,107,0.24);
+    }
+
+    .hero{
+      padding:48px 0 34px;
+    }
+    .hero-grid{
+      display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:stretch;
+    }
+    .hero-copy{
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0)),
+        linear-gradient(135deg, var(--hero), var(--hero-2));
+      color:#fff;border-radius:32px;padding:44px;box-shadow:var(--shadow);
+      position:relative;overflow:hidden;
+    }
+    .hero-copy::after{
+      content:"";position:absolute;right:-80px;top:-80px;width:220px;height:220px;border-radius:50%;
+      background:radial-gradient(circle, rgba(255,255,255,0.18), transparent 70%);
+    }
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:10px 14px;border-radius:999px;
+      background:rgba(255,255,255,0.10);color:#d9e7ff;
+      font-size:.83rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+    }
+    .hero h1{
+      margin:18px 0 14px;font-family:'Rajdhani',sans-serif;
+      font-size:clamp(2.8rem,5vw,5rem);line-height:.95;letter-spacing:1px;
+    }
+    .hero p.lead{
+      font-size:1.08rem;line-height:1.75;color:#d7dfec;max-width:700px;margin:0;
+    }
+    .hero-points{
+      display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:28px 0;
+    }
+    .hero-point{
+      padding:16px;border-radius:18px;background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.09);
+    }
+    .hero-point strong{display:block;font-size:1.02rem;margin-bottom:6px}
+    .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+    .hero-note{margin-top:14px;color:#c6d3e8;font-size:.9rem}
+
+    .hero-card{
+      background:var(--panel);border-radius:32px;padding:22px;box-shadow:var(--shadow);
+      display:flex;flex-direction:column;gap:18px;
+    }
+    .mini-board{
+      background:#eff5ff;border:1px solid #dbe8ff;border-radius:24px;padding:20px;
+    }
+    .mini-board h3{
+      margin:0 0 14px;font-family:'Rajdhani',sans-serif;font-size:1.45rem;letter-spacing:1px;
+    }
+    .metric-grid{
+      display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;
+    }
+    .metric{
+      background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;
+    }
+    .metric .tag{font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+    .metric .value{margin-top:8px;font-size:1.9rem;font-weight:800}
+
+    .stack{
+      display:grid;gap:18px;padding:30px 0 10px;
+    }
+    .section-title{
+      margin:0 0 10px;font-family:'Rajdhani',sans-serif;font-size:2.15rem;letter-spacing:1px;
+    }
+    .section-copy{margin:0;color:var(--muted);line-height:1.8;max-width:780px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+    .card{
+      background:var(--panel);border:1px solid var(--line);border-radius:26px;padding:24px;
+      box-shadow:0 14px 30px rgba(12,26,46,0.05);
+    }
+    .card h3{
+      margin:0 0 10px;font-family:'Rajdhani',sans-serif;font-size:1.35rem;letter-spacing:.8px;
+    }
+    .card p{margin:0;color:var(--muted);line-height:1.75}
+    .icon{
+      width:52px;height:52px;border-radius:18px;margin-bottom:16px;
+      display:grid;place-items:center;color:#fff;font-size:1.3rem;font-weight:800;
+    }
+    .icon.blue{background:linear-gradient(135deg,var(--brand),#76adff)}
+    .icon.green{background:linear-gradient(135deg,var(--brand-2),#4dd89a)}
+    .icon.orange{background:linear-gradient(135deg,var(--brand-3),#ffb15d)}
+
+    .problem-strip{
+      display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;
+    }
+    .problem{
+      padding:20px;border-radius:22px;background:#fff;border:1px solid var(--line);
+    }
+    .problem strong{display:block;font-size:1rem;margin-bottom:8px}
+    .problem span{color:var(--muted);line-height:1.7;font-size:.95rem}
+
+    .two-col{
+      display:grid;grid-template-columns:1fr 1fr;gap:18px;
+    }
+    .step{
+      display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px dashed var(--line);
+    }
+    .step:last-child{border-bottom:none}
+    .step-no{
+      width:40px;height:40px;border-radius:14px;flex:0 0 40px;
+      display:grid;place-items:center;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--brand),#7ab1ff);
+    }
+    .step strong{display:block;margin-bottom:6px}
+    .step p{margin:0;color:var(--muted);line-height:1.75}
+
+    .benefit-banner{
+      padding:28px;border-radius:30px;background:linear-gradient(135deg,#0b67ff,#15a86b);
+      color:#fff;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;
+      box-shadow:var(--shadow);
+    }
+    .benefit-banner h3{
+      margin:0 0 8px;font-family:'Rajdhani',sans-serif;font-size:2rem;letter-spacing:1px;
+    }
+    .benefit-banner p{margin:0;color:rgba(255,255,255,0.88);line-height:1.8}
+
+    .lead-wrap{
+      display:block;
+    }
+    .lead-top-note{
+      margin:0 0 18px;
+      color:var(--muted);
+      line-height:1.75;
+    }
+
+    form.lead-form{
+      display:grid;gap:14px;
+    }
+    .field-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    label{
+      display:block;margin-bottom:8px;font-size:.82rem;font-weight:800;color:var(--muted);
+      text-transform:uppercase;letter-spacing:.06em;
+    }
+    input,select,textarea{
+      width:100%;padding:14px 16px;border-radius:16px;border:1px solid var(--line);
+      background:#fff;font:inherit;color:var(--ink);outline:none;
+      transition:border-color .18s ease, box-shadow .18s ease;
+    }
+    input:focus,select:focus,textarea:focus{
+      border-color:#77aafc;box-shadow:0 0 0 4px rgba(11,103,255,0.12);
+    }
+    textarea{min-height:124px;resize:vertical}
+    .chips{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{
+      border:1px solid var(--line);background:#fff;color:var(--ink);
+      border-radius:999px;padding:10px 14px;font-size:.9rem;cursor:pointer;
+      display:inline-flex;align-items:center;gap:8px;
+    }
+    .chip input{display:none}
+    .chip.active{
+      border-color:#85bcff;background:#ecf4ff;color:#0b4ec8;
+    }
+    .form-note{font-size:.9rem;color:var(--muted);line-height:1.7}
+    .status-box{
+      display:none;padding:14px 16px;border-radius:18px;font-weight:700;
+    }
+    .status-box.success{display:block;background:#ebfff5;color:#11683f;border:1px solid #9fe0be}
+    .status-box.error{display:block;background:#fff1f1;color:#a52626;border:1px solid #f2b3b3}
+
+    .faq details{
+      background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px 20px;
+    }
+    .faq summary{
+      cursor:pointer;font-weight:800;list-style:none;
+    }
+    .faq summary::-webkit-details-marker{display:none}
+    .faq p{margin:12px 0 0;color:var(--muted);line-height:1.8}
+
+    footer{
+      margin-top:34px;padding:28px 0 calc(36px + var(--safe-bottom));color:var(--muted);
+    }
+    .footer-box{
+      border-top:1px solid var(--line);padding-top:18px;
+      display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    }
+
+    .floating-cta{
+      position:fixed;right:18px;bottom:18px;z-index:40;
+      box-shadow:0 16px 40px rgba(11,103,255,0.28);
+    }
+
+    @media (max-width: 1040px){
+      .hero-grid,.lead-wrap,.two-col,.grid-4{grid-template-columns:1fr}
+      .grid-3,.problem-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .benefit-banner{grid-template-columns:1fr}
+    }
+
+    @media (max-width: 720px){
+      .nav-links{display:none}
+      .hero-copy,.hero-card,.card,.problem,.mini-board{padding:20px}
+      .hero h1{font-size:2.4rem}
+      .hero-points,.metric-grid,.grid-3,.problem-strip,.field-grid{grid-template-columns:1fr}
+      .nav-row{min-height:72px}
+      .brand{font-size:1.15rem}
+      .floating-cta{
+        left:16px;right:16px;bottom:16px;width:auto;
+      }
+      .floating-cta .btn{width:100%}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="shell nav-row">
+      <div class="brand">
+        <div class="brand-badge">O</div>
+        <div>OLEFFI</div>
+      </div>
+      <div class="nav-links">
+        <a href="#problem">Problems We Solve</a>
+        <a href="#features">Features</a>
+        <a href="#how">How It Works</a>
+        <a href="#contact">Request Demo</a>
+      </div>
+      <div class="nav-actions">
+        <a class="btn btn-secondary" href="#features">Explore Product</a>
+        <a class="btn btn-primary" href="#contact" id="nav-demo-cta">Show Interest</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Built for MSME factories</div>
+          <h1 id="hero-headline">Turn shop-floor data into daily business control.</h1>
+          <p class="lead">
+            Oleffi is a practical manufacturing SaaS for MSMEs to capture production, downtime, quality,
+            OEE, and ERP-ready data without depending on heavy enterprise systems.
+          </p>
+          <div class="hero-points">
+            <div class="hero-point">
+              <strong>Live production visibility</strong>
+              Track machine-wise production, rejection, downtime, and quality from one simple app.
+            </div>
+            <div class="hero-point">
+              <strong>ERP-ready data export</strong>
+              Use Oleffi output for material consumption, costing, dispatch planning, and traceability.
+            </div>
+            <div class="hero-point">
+              <strong>Role-based for factory teams</strong>
+              Admin, Production, and Quality each get their own controlled workflow.
+            </div>
+            <div class="hero-point">
+              <strong>Fast rollout for MSMEs</strong>
+              Start small, train quickly, and expand machine by machine.
+            </div>
+          </div>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#contact" id="hero-demo-cta">Show Interest</a>
+            <a class="btn btn-secondary" href="#how">See How It Works</a>
+          </div>
+          <div class="hero-note">
+            Best for small and mid-sized factories that need discipline on the shop floor before investing in a full ERP rollout. Instant Telegram alert and webhook flow are ready for lead capture.
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="mini-board">
+            <h3>What MSMEs get</h3>
+            <div class="metric-grid">
+              <div class="metric">
+                <div class="tag">Modules</div>
+                <div class="value">Admin</div>
+              </div>
+              <div class="metric">
+                <div class="tag">Operations</div>
+                <div class="value">Production</div>
+              </div>
+              <div class="metric">
+                <div class="tag">Quality</div>
+                <div class="value">Optional</div>
+              </div>
+              <div class="metric">
+                <div class="tag">Output</div>
+                <div class="value">ERP Export</div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Perfect for demo and pilot</h3>
+            <p>
+              Run Oleffi first as a controlled pilot on selected machines. Measure production discipline,
+              rejection visibility, and downtime capture before scaling across the plant.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Lead capture built in</h3>
+            <p>
+              When an MSME shows interest using the form below, the backend saves the contact details and can send you an instant alert by Telegram or webhook.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stack" id="problem">
+      <div>
+        <h2 class="section-title">Problems Oleffi solves for MSMEs</h2>
+        <p class="section-copy">
+          Many MSMEs still depend on notebooks, WhatsApp updates, and Excel files that are not connected to
+          the actual production shift. Oleffi creates a simple discipline layer on top of daily manufacturing.
+        </p>
+      </div>
+      <div class="problem-strip">
+        <div class="problem">
+          <strong>No real production visibility</strong>
+          <span>Managers know dispatch pressure, but not the exact machine-wise output and shift loss.</span>
+        </div>
+        <div class="problem">
+          <strong>Downtime is not classified properly</strong>
+          <span>Electrical, mechanical, hydraulic, pneumatic, setup, and material losses are mixed together.</span>
+        </div>
+        <div class="problem">
+          <strong>ERP does not get reliable shop-floor data</strong>
+          <span>Production quantity is captured late, so material consumption and costing become weak.</span>
+        </div>
+        <div class="problem">
+          <strong>Quality records are scattered</strong>
+          <span>Defect types, pass rate, and lot-wise quality information are difficult to review quickly.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="stack" id="features">
+      <div>
+        <h2 class="section-title">Core product features</h2>
+        <p class="section-copy">
+          Oleffi is designed as a practical SaaS layer for manufacturing discipline. It focuses on what MSMEs can actually adopt on the shop floor.
+        </p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="icon blue">A</div>
+          <h3>Admin control</h3>
+          <p>Register company once, create machine master, upload product master, add users, disable old users, and manage company code securely.</p>
+        </div>
+        <div class="card">
+          <div class="icon green">P</div>
+          <h3>Production capture</h3>
+          <p>Record machine, part number, part name, cycle time, planned quantity, actual quantity, rejection, downtime, and calculated KPIs.</p>
+        </div>
+        <div class="card">
+          <div class="icon orange">Q</div>
+          <h3>Quality module</h3>
+          <p>Track inspection, defect type, defect quantity, pass rate, and status. The quality module can also be hidden for plants that only want admin plus production.</p>
+        </div>
+        <div class="card">
+          <div class="icon blue">M</div>
+          <h3>Machine-wise product mapping</h3>
+          <p>Only relevant parts appear for the selected machine. This reduces entry error and improves daily accuracy.</p>
+        </div>
+        <div class="card">
+          <div class="icon green">R</div>
+          <h3>Reports and exports</h3>
+          <p>Generate records and export ERP-ready Excel or JSON files for production, quality, downtime, and master data.</p>
+        </div>
+        <div class="card">
+          <div class="icon orange">S</div>
+          <h3>Simple SaaS rollout</h3>
+          <p>Start in one unit or one department first. Expand after the team becomes comfortable with daily use.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="stack" id="how">
+      <div>
+        <h2 class="section-title">How Oleffi fits into factory workflow</h2>
+        <p class="section-copy">
+          The product is built around a clean sequence: configure once, capture every shift, then export data for review or ERP use.
+        </p>
+      </div>
+      <div class="two-col">
+        <div class="card">
+          <h3>Factory-side flow</h3>
+          <div class="step">
+            <div class="step-no">1</div>
+            <div><strong>Admin sets up company</strong><p>Machines, product master, users, company code, and module access are configured once.</p></div>
+          </div>
+          <div class="step">
+            <div class="step-no">2</div>
+            <div><strong>Production team records shift data</strong><p>Operator selects machine and part, enters quantities, and logs rejection plus downtime.</p></div>
+          </div>
+          <div class="step">
+            <div class="step-no">3</div>
+            <div><strong>Quality team records inspection</strong><p>Inspectors capture defect type, defect quantity, pass rate, and quality status.</p></div>
+          </div>
+          <div class="step">
+            <div class="step-no">4</div>
+            <div><strong>Management reviews performance</strong><p>Use OEE, downtime, rejection, and machine-wise records for daily review.</p></div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Business-side result</h3>
+          <div class="step">
+            <div class="step-no">1</div>
+            <div><strong>Faster decision making</strong><p>Daily production, loss, and rejection visibility improves response speed.</p></div>
+          </div>
+          <div class="step">
+            <div class="step-no">2</div>
+            <div><strong>Cleaner ERP linkage</strong><p>Part-wise quantity exported from Oleffi can be used for material consumption, costing, and planning in ERP.</p></div>
+          </div>
+          <div class="step">
+            <div class="step-no">3</div>
+            <div><strong>Operational discipline</strong><p>Role-based workflows reduce dependency on verbal updates and disconnected files.</p></div>
+          </div>
+          <div class="step">
+            <div class="step-no">4</div>
+            <div><strong>Scalable digitalization</strong><p>MSMEs can begin with the essential modules and add more later without changing the whole process.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stack">
+      <div class="benefit-banner">
+        <div>
+          <h3>If you are interested, click your interest button.</h3>
+          <p>
+            Share your details and we will contact you for the next discussion.
+          </p>
+        </div>
+        <a class="btn btn-secondary" href="#contact">Interested</a>
+      </div>
+    </section>
+
+    <section class="stack" id="contact">
+      <div>
+        <h2 class="section-title">Capture MSME interest</h2>
+        <p class="section-copy">
+          Fill this short form if you want to know more about Oleffi.
+        </p>
+      </div>
+
+      <div class="lead-wrap">
+        <div class="card">
+          <p class="lead-top-note" id="sales-contact-line">Phone and email can be updated in the SaaS config file.</p>
+          <div id="form-status" class="status-box"></div>
+          <form class="lead-form" id="interest-form">
+            <div class="field-grid">
+              <div>
+                <label for="lead-contact">Contact person</label>
+                <input id="lead-contact" name="contactName" type="text" placeholder="Enter full name" required>
+              </div>
+              <div>
+                <label for="lead-company">Company name</label>
+                <input id="lead-company" name="companyName" type="text" placeholder="Enter factory / unit name" required>
+              </div>
+            </div>
+
+            <div class="field-grid">
+              <div>
+                <label for="lead-phone">Phone</label>
+                <input id="lead-phone" name="phone" type="text" placeholder="Mobile / WhatsApp number">
+              </div>
+              <div>
+                <label for="lead-email">Email</label>
+                <input id="lead-email" name="email" type="email" placeholder="Work email">
+              </div>
+            </div>
+
+            <div class="field-grid">
+              <div>
+                <label for="lead-city">City</label>
+                <input id="lead-city" name="city" type="text" placeholder="Factory city">
+              </div>
+              <div>
+                <label for="lead-industry">Industry</label>
+                <input id="lead-industry" name="industry" type="text" placeholder="Plastic, auto, machining, etc.">
+              </div>
+            </div>
+
+            <div class="field-grid">
+              <div>
+                <label for="lead-employees">Employees</label>
+                <select id="lead-employees" name="employees">
+                  <option value="">Select range</option>
+                  <option>1-25</option>
+                  <option>26-50</option>
+                  <option>51-100</option>
+                  <option>101-250</option>
+                  <option>250+</option>
+                </select>
+              </div>
+              <div>
+                <label for="lead-erp">Current ERP / software</label>
+                <input id="lead-erp" name="erpName" type="text" placeholder="SAP, Tally, custom ERP, Excel, none">
+              </div>
+            </div>
+
+            <div class="form-note">
+              Submit name plus company, and at least one contact method: phone or email.
+            </div>
+
+            <button class="btn btn-green" type="submit" id="submit-interest-btn">I'm Interested</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="stack faq" id="faq">
+      <div>
+        <h2 class="section-title">Common buyer questions</h2>
+      </div>
+      <details>
+        <summary>Can Oleffi work with our existing ERP?</summary>
+        <p>Yes. Oleffi can export production, quality, downtime, and product master data in ERP-friendly formats so your existing ERP team can map and consume the data.</p>
+      </details>
+      <details>
+        <summary>Can we use only Admin and Production?</summary>
+        <p>Yes. The quality module can be hidden for units that want only admin and production workflows.</p>
+      </details>
+      <details>
+        <summary>Is Oleffi suitable for MSMEs?</summary>
+        <p>That is the main target. The product is built to stay practical, simple to train, and easier to adopt than heavy enterprise systems.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-box">
+      <div>Oleffi SaaS front end for MSME sales and demo use.</div>
+      <div id="footer-contact"></div>
+    </div>
+  </footer>
+
+  <div class="floating-cta">
+    <a class="btn btn-primary" href="#contact" id="floating-demo-cta">Show Interest</a>
+  </div>
+
+  <script>
+    const SAAS = window.oleffiSaasConfig || {};
+    const API_BASE = (SAAS.apiBase || 'http://127.0.0.1:8788/api').replace(/\/$/, '');
+
+    function setMarketingText() {
+      const headline = SAAS.headline || 'Turn shop-floor data into daily business control.';
+      const ctaLabel = SAAS.demoCtaLabel || 'Show Interest';
+      const heroHeadline = document.getElementById('hero-headline');
+      if (heroHeadline) heroHeadline.textContent = headline;
+      ['nav-demo-cta', 'hero-demo-cta', 'floating-demo-cta'].forEach(id => {
+        const element = document.getElementById(id);
+        if (element) element.textContent = ctaLabel;
+      });
+    }
+
+    function setSalesText() {
+      const phone = SAAS.salesPhone || 'Update sales phone in oleffi_saas_config.js';
+      const email = SAAS.salesEmail || 'Update sales email in oleffi_saas_config.js';
+      const line = `Phone: ${phone} | Email: ${email}`;
+      const salesLine = document.getElementById('sales-contact-line');
+      const footer = document.getElementById('footer-contact');
+      if (salesLine) salesLine.textContent = line;
+      if (footer) footer.textContent = line;
+    }
+
+    async function submitLead(payload) {
+      const response = await fetch(`${API_BASE}/interest`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const data = await response.json().catch(() => ({ ok: false, error: 'Server response error' }));
+      if (!response.ok || data.ok === false) {
+        throw new Error(data.error || 'Could not submit interest');
+      }
+      return data;
+    }
+
+    function showStatus(type, message) {
+      const box = document.getElementById('form-status');
+      if (!box) return;
+      box.className = `status-box ${type}`;
+      box.textContent = message;
+      box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function collectModules() {
+      return Array.from(document.querySelectorAll('#module-chips input:checked')).map(input => input.value);
+    }
+
+    function syncChipState() {
+      document.querySelectorAll('#module-chips .chip').forEach(chip => {
+        const checkbox = chip.querySelector('input');
+        chip.classList.toggle('active', !!checkbox.checked);
+      });
+    }
+
+    function setBusy(isBusy) {
+      const button = document.getElementById('submit-interest-btn');
+      if (!button) return;
+      button.disabled = isBusy;
+      button.textContent = isBusy ? 'Submitting...' : "I'm Interested";
+      button.style.opacity = isBusy ? '0.75' : '1';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      setMarketingText();
+      setSalesText();
+
+      const form = document.getElementById('interest-form');
+      if (!form) return;
+
+      form.addEventListener('submit', async event => {
+        event.preventDefault();
+        const formData = new FormData(form);
+        const payload = {
+          contactName: (formData.get('contactName') || '').toString().trim(),
+          companyName: (formData.get('companyName') || '').toString().trim(),
+          phone: (formData.get('phone') || '').toString().trim(),
+          email: (formData.get('email') || '').toString().trim(),
+          city: (formData.get('city') || '').toString().trim(),
+          industry: (formData.get('industry') || '').toString().trim(),
+          employees: (formData.get('employees') || '').toString().trim(),
+          modules: [],
+          erpName: (formData.get('erpName') || '').toString().trim(),
+          timeline: '',
+          demoPreference: '',
+          message: ''
+        };
+
+        if (!payload.contactName || !payload.companyName) {
+          showStatus('error', 'Please enter contact person and company name.');
+          return;
+        }
+
+        if (!payload.phone && !payload.email) {
+          showStatus('error', 'Please enter phone or email so you can be contacted.');
+          return;
+        }
+
+        setBusy(true);
+        try {
+          await submitLead(payload);
+          form.reset();
+          showStatus('success', 'Interest received successfully. Your details have been captured for follow-up.');
+        } catch (error) {
+          showStatus('error', error.message || 'Could not submit interest right now.');
+        } finally {
+          setBusy(false);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
