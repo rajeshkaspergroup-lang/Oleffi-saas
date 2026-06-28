@@ -115,11 +115,6 @@ function buildLeadMessage(lead) {
     `City: ${lead.city || 'Not provided'}`,
     `Industry: ${lead.industry || 'Not provided'}`,
     `Employees: ${lead.employees || 'Not provided'}`,
-    `Modules: ${lead.modules.length ? lead.modules.join(', ') : 'Not selected'}`,
-    `ERP: ${lead.erpName || 'Not provided'}`,
-    `Timeline: ${lead.timeline || 'Not provided'}`,
-    `Demo mode: ${lead.demoPreference || 'Not provided'}`,
-    `Message: ${lead.message || 'No message'}`,
     `Submitted: ${lead.createdAt}`
   ].join('\n');
 }
@@ -609,4 +604,3 @@ server.listen(PORT, HOST, () => {
   console.log(`Oleffi backend running on http://${HOST}:${PORT}`);
   console.log(`Data file: ${DATA_FILE}`);
 });
-
