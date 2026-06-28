@@ -1,0 +1,13 @@
+{
+  "name": "oleffi-saas-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Oleffi backend for company login, lead capture, Telegram alerts, and webhook alerts",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
